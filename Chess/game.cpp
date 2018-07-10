@@ -1,5 +1,5 @@
 #include "game.h"
-#include "Piece.h"
+#include "piece.h"
 
 Game::Game()
 {

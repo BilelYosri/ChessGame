@@ -1,6 +1,7 @@
 #ifndef GAME_H
 #define GAME_H
-
+#include "piece.h"
+#include "player.h"
 
 class Game
 {

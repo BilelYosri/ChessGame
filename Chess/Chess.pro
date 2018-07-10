@@ -43,7 +43,7 @@ HEADERS += \
     knight.h \
     bishop.h \
     queen.h \
-    king.h
+    king.h \
     game.h \
     player.h
 

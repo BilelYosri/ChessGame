@@ -58,7 +58,9 @@ SOURCES       = ../Chess/main.cpp \
 		../Chess/knight.cpp \
 		../Chess/bishop.cpp \
 		../Chess/queen.cpp \
-		../Chess/king.cpp moc_mainwindow.cpp
+		../Chess/king.cpp \
+		../Chess/game.cpp \
+		../Chess/player.cpp moc_mainwindow.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		piece.o \
@@ -68,6 +70,8 @@ OBJECTS       = main.o \
 		bishop.o \
 		queen.o \
 		king.o \
+		game.o \
+		player.o \
 		moc_mainwindow.o
 DIST          = ../../../Qt/5.11.1/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.11.1/gcc_64/mkspecs/common/unix.conf \
@@ -265,7 +269,9 @@ DIST          = ../../../Qt/5.11.1/gcc_64/mkspecs/features/spec_pre.prf \
 		../Chess/knight.h \
 		../Chess/bishop.h \
 		../Chess/queen.h \
-		../Chess/king.h ../Chess/main.cpp \
+		../Chess/king.h \
+		../Chess/game.h \
+		../Chess/player.h ../Chess/main.cpp \
 		../Chess/mainwindow.cpp \
 		../Chess/piece.cpp \
 		../Chess/pawn.cpp \
@@ -273,7 +279,9 @@ DIST          = ../../../Qt/5.11.1/gcc_64/mkspecs/features/spec_pre.prf \
 		../Chess/knight.cpp \
 		../Chess/bishop.cpp \
 		../Chess/queen.cpp \
-		../Chess/king.cpp
+		../Chess/king.cpp \
+		../Chess/game.cpp \
+		../Chess/player.cpp
 QMAKE_TARGET  = Chess
 DESTDIR       = 
 TARGET        = Chess
@@ -687,8 +695,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../Qt/5.11.1/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../Chess/mainwindow.h ../Chess/piece.h ../Chess/pawn.h ../Chess/rook.h ../Chess/knight.h ../Chess/bishop.h ../Chess/queen.h ../Chess/king.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../Chess/main.cpp ../Chess/mainwindow.cpp ../Chess/piece.cpp ../Chess/pawn.cpp ../Chess/rook.cpp ../Chess/knight.cpp ../Chess/bishop.cpp ../Chess/queen.cpp ../Chess/king.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../Chess/mainwindow.h ../Chess/piece.h ../Chess/pawn.h ../Chess/rook.h ../Chess/knight.h ../Chess/bishop.h ../Chess/queen.h ../Chess/king.h ../Chess/game.h ../Chess/player.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../Chess/main.cpp ../Chess/mainwindow.cpp ../Chess/piece.cpp ../Chess/pawn.cpp ../Chess/rook.cpp ../Chess/knight.cpp ../Chess/bishop.cpp ../Chess/queen.cpp ../Chess/king.cpp ../Chess/game.cpp ../Chess/player.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../Chess/mainwindow.ui $(DISTDIR)/
 
 
@@ -1103,23 +1111,35 @@ mainwindow.o: ../Chess/mainwindow.cpp ../Chess/mainwindow.h \
 piece.o: ../Chess/piece.cpp ../Chess/piece.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o piece.o ../Chess/piece.cpp
 
-pawn.o: ../Chess/pawn.cpp ../Chess/pawn.h
+pawn.o: ../Chess/pawn.cpp ../Chess/pawn.h \
+		../Chess/piece.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o pawn.o ../Chess/pawn.cpp
 
-rook.o: ../Chess/rook.cpp ../Chess/rook.h
+rook.o: ../Chess/rook.cpp ../Chess/rook.h \
+		../Chess/piece.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o rook.o ../Chess/rook.cpp
 
-knight.o: ../Chess/knight.cpp ../Chess/knight.h
+knight.o: ../Chess/knight.cpp ../Chess/knight.h \
+		../Chess/piece.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o knight.o ../Chess/knight.cpp
 
-bishop.o: ../Chess/bishop.cpp ../Chess/bishop.h
+bishop.o: ../Chess/bishop.cpp ../Chess/bishop.h \
+		../Chess/piece.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o bishop.o ../Chess/bishop.cpp
 
-queen.o: ../Chess/queen.cpp ../Chess/queen.h
+queen.o: ../Chess/queen.cpp ../Chess/queen.h \
+		../Chess/piece.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o queen.o ../Chess/queen.cpp
 
-king.o: ../Chess/king.cpp ../Chess/king.h
+king.o: ../Chess/king.cpp ../Chess/king.h \
+		../Chess/piece.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o king.o ../Chess/king.cpp
+
+game.o: ../Chess/game.cpp ../Chess/game.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o game.o ../Chess/game.cpp
+
+player.o: ../Chess/player.cpp ../Chess/player.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o player.o ../Chess/player.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

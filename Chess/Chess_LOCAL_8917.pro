@@ -31,9 +31,7 @@ SOURCES += \
     knight.cpp \
     bishop.cpp \
     queen.cpp \
-    king.cpp \
-    game.cpp \
-    player.cpp
+    king.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -44,8 +42,6 @@ HEADERS += \
     bishop.h \
     queen.h \
     king.h
-    game.h \
-    player.h
 
 FORMS += \
         mainwindow.ui

@@ -25,25 +25,11 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    piece.cpp \
-    pawn.cpp \
-    rook.cpp \
-    knight.cpp \
-    bishop.cpp \
-    queen.cpp \
-    king.cpp \
     game.cpp \
     player.cpp
 
 HEADERS += \
         mainwindow.h \
-    piece.h \
-    pawn.h \
-    rook.h \
-    knight.h \
-    bishop.h \
-    queen.h \
-    king.h
     game.h \
     player.h
 

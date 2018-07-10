@@ -25,15 +25,14 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
+<<<<<<< HEAD
     piece.cpp \
     pawn.cpp \
     rook.cpp \
     knight.cpp \
     bishop.cpp \
     queen.cpp \
-    king.cpp \
-    game.cpp \
-    player.cpp
+    king.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -44,8 +43,15 @@ HEADERS += \
     bishop.h \
     queen.h \
     king.h
+=======
+    game.cpp \
+    player.cpp
+
+HEADERS += \
+        mainwindow.h \
     game.h \
     player.h
+>>>>>>> cee6fdf39cfc4990d5c697cf72e28d32645ba77d
 
 FORMS += \
         mainwindow.ui

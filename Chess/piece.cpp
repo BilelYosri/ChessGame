@@ -2,7 +2,9 @@
 
 Piece::Piece(Color _color, int _x, int _y)
 {
-    
+    color=_color;
+    x=_x;
+    y=_y;
 }
 
 int Piece::getX()

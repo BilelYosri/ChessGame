@@ -8,7 +8,9 @@
 class Queen : public Piece
 {
 public:
-    Queen();
+    Queen(Color _color, int _x, int _y);
+    void generatePossibilities();
+    void move(int _x, int _y);
 };
 
 #endif // QUEEN_H

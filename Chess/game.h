@@ -17,14 +17,14 @@ class Game
     int time0,time1,time2;
 
 public:
-    Game();
+    Game(int _time, Player _p1, Player _p2);
     ~Game();
-    Piece* getSquare(int x,int y);
-    void setSquare(Piece* p,int x,int y);
+    Piece* getSquare(int _x,int _y);
+    void setSquare(Piece* _p,int _x,int _y);
     void generatePossibleMoves();
-    void assist(int x,int y);
-    void play(int x1,int y1,int x2,int y2);
-    void capture(int x,int y);
+    void assist(int _x,int _y);
+    void play(int _x1,int _y1,int _x2,int _y2);
+    void capture(int _x,int _y);
 };
 
 #endif // GAME_H

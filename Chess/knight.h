@@ -8,7 +8,9 @@
 class Knight : public Piece
 {
 public:
-    Knight();
+    Knight(Color _color, int _x, int _y);
+    void generatePossibilities();
+    void move(int _x, int _y);
 };
 
 #endif // KNIGHT_H

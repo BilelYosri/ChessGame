@@ -14,3 +14,13 @@ void Rook::move(int _x, int _y)
 {
 
 }
+
+bool Rook::isMoved()
+{
+
+}
+
+void Rook::setMoved()
+{
+
+}

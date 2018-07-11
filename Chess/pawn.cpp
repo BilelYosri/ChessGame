@@ -14,3 +14,23 @@ void Pawn::move(int _x, int _y)
 {
 
 }
+
+bool Pawn::isMoved()
+{
+
+}
+
+void Pawn::setMoved()
+{
+
+}
+
+bool Pawn::isEnPassant()
+{
+
+}
+
+void Pawn::setEnPassant(bool _enPassant)
+{
+
+}

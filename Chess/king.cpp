@@ -14,3 +14,13 @@ void King::move(int _x, int _y)
 {
 
 }
+
+bool King::isMoved()
+{
+
+}
+
+void King::setMoved()
+{
+
+}

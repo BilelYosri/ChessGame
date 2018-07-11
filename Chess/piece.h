@@ -12,7 +12,7 @@ protected:
 
 public:
     Piece(Color _color, int _x, int _y);
-    virtual void generatePossibilities()=0;
+    virtual bool generatePossibilities()=0;
     virtual void move(int, int)=0;
     int getX();
     void setX(int _x);

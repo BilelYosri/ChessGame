@@ -19,6 +19,7 @@ class Game
 public:
     Game(int _time, Player _p1, Player _p2);
     ~Game();
+    bool isMate();
     Piece* getSquare(int _x,int _y);
     void setSquare(Piece* _p,int _x,int _y);
     void generatePossibleMoves();

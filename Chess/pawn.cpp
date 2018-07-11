@@ -6,7 +6,7 @@ Pawn::Pawn(Color _color, int _x, int _y):Piece(_color, _x, _y)
     enPassant=false;
 }
 
-void Pawn::generatePossibilities()
+bool Pawn::generatePossibilities()
 {
 
 }

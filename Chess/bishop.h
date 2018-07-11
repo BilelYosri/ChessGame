@@ -9,7 +9,7 @@ class Bishop : public Piece
 {
 public:
     Bishop(Color _color, int _x, int _y);
-    void generatePossibilities();
+    bool generatePossibilities();
     void move(int _x, int _y);
 };
 

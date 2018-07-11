@@ -5,7 +5,7 @@ Knight::Knight(Color _color, int _x, int _y):Piece(_color, _x, _y)
 
 }
 
-void Knight::generatePossibilities()
+bool Knight::generatePossibilities()
 {
 
 }

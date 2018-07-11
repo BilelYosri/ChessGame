@@ -17,10 +17,10 @@ void Rook::move(int _x, int _y)
 
 bool Rook::isMoved()
 {
-
+    return moved;
 }
 
 void Rook::setMoved()
 {
-
+    moved=true;
 }

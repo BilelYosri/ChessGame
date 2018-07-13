@@ -46,7 +46,8 @@ HEADERS += \
     king.h \
     game.h \
     player.h \
-    constants.h
+    constants.h \
+    piece_types.h
 
 FORMS += \
         mainwindow.ui

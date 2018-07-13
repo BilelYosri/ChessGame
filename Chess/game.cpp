@@ -94,9 +94,17 @@ bool Game::canIPlay()
     return  !cantPlay;
 }
 
-Piece* Game::getSquare(int _x,int _y)
+bool Game::isOutOfBoundaries(int _x, int _y)
 {
     if (_x < 0 || _x > 7 || _y < 0 || _y > 7)
+        return true;
+    else
+        return false;
+}
+
+Piece* Game::getSquare(int _x,int _y)
+{
+    if (isOutOfBoundaries(_x, _y))
         return nullptr;
     else
         return board[_x][_y];

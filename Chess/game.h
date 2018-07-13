@@ -21,6 +21,7 @@ public:
     ~Game();
     bool canIPlay();
     Piece* getSquare(int _x,int _y);
+    bool isOutOfBoundaries(int _x, int _y);
     void setSquare(Piece* _p,int _x,int _y);
     void generatePossibleMoves();
     Piece* getKing();

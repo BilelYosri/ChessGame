@@ -23,6 +23,7 @@ public:
     Piece* getSquare(int _x,int _y);
     void setSquare(Piece* _p,int _x,int _y);
     void generatePossibleMoves();
+    Piece* getKing();
     void assist(int _x,int _y);
     void play(int _x1,int _y1,int _x2,int _y2);
     void capture(int _x,int _y);

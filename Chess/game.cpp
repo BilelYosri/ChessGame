@@ -138,6 +138,15 @@ void Game::generatePossibleMoves()
     mate = !possible;
 }
 
+Piece* Game::getKing()
+{
+    if(turn==white)
+        return whitePieces[15];
+    else
+        return blackPieces[15];
+}
+
+
 void Game::assist(int _x,int _y)
 {
 

@@ -17,7 +17,7 @@ Game::Game(int _time, Player _p1, Player _p2)
 
     time0 = 300;
     turn = white;
-    mate = false;
+    cantPlay = false;
     Piece* p;
     int i;
     for (i=0; i<8; i++)
@@ -89,9 +89,9 @@ Game::~Game()
 
 }
 
-bool Game::isMate()
+bool Game::canIPlay()
 {
-    return  mate;
+    return  !cantPlay;
 }
 
 Piece* Game::getSquare(int _x,int _y)
@@ -135,7 +135,7 @@ void Game::generatePossibleMoves()
                 possible |= blackPieces[i]->generatePossibilities();
         }
     }
-    mate = !possible;
+    cantPlay = !possible;
 }
 
 Piece* Game::getKing()

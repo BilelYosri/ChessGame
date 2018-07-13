@@ -8,7 +8,7 @@ class Game
 {
     Color turn;
     Piece* board[8][8];
-    bool mate;
+    bool cantPlay;
     Piece* whitePieces[16];
     Piece* blackPieces[16];
     Piece* whitePawned[15];
@@ -19,7 +19,7 @@ class Game
 public:
     Game(int _time, Player _p1, Player _p2);
     ~Game();
-    bool isMate();
+    bool canIPlay();
     Piece* getSquare(int _x,int _y);
     void setSquare(Piece* _p,int _x,int _y);
     void generatePossibleMoves();

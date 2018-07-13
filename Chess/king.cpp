@@ -24,3 +24,9 @@ void King::setMoved()
 {
     moved = true;
 }
+
+bool King::isInCheck()
+{
+    bool inCheck = false;
+
+}

@@ -15,6 +15,7 @@ public:
     void move(int _x, int _y);
     bool isMoved();
     void setMoved();
+    bool isInCheck();
 };
 
 #endif // KING_H

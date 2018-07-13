@@ -8,7 +8,7 @@
 class Bishop : public Piece
 {
 public:
-    Bishop(Color _color, int _x, int _y);
+    Bishop(Game* _game, Color _color, int _x, int _y);
     bool generatePossibilities();
     void move(int _x, int _y);
 };

@@ -1,7 +1,9 @@
 #include "piece.h"
+#include "game.h"
 
-Piece::Piece(Color _color, int _x, int _y)
+Piece::Piece(Game* _game, Color _color, int _x, int _y)
 {
+    game = _game;
     color=_color;
     x=_x;
     y=_y;

@@ -3,6 +3,7 @@
 #include "piece.h"
 #include "player.h"
 #include "constants.h"
+#include <string>
 
 class Game
 {

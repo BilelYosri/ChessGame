@@ -10,7 +10,7 @@ class Rook : public Piece
 private:
     bool moved;
 public:
-    Rook(Color _color, int _x, int _y);
+    Rook(Game* _game, Color _color, int _x, int _y);
     bool generatePossibilities();
     void move(int _x, int _y);
     bool isMoved();

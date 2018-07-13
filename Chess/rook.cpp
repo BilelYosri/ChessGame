@@ -1,7 +1,8 @@
 #include "rook.h"
+#include "game.h"
 #include <cstring>
 
-Rook::Rook(Color _color, int _x, int _y):Piece(_color, _x, _y)
+Rook::Rook(Game* _game, Color _color, int _x, int _y):Piece(_game, _color, _x, _y)
 {
     moved=false;
 }

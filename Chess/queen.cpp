@@ -1,6 +1,7 @@
 #include "queen.h"
+#include "game.h"
 
-Queen::Queen(Color _color, int _x, int _y):Piece(_color, _x, _y)
+Queen::Queen(Game* _game, Color _color, int _x, int _y):Piece(_game, _color, _x, _y)
 {
 
 }

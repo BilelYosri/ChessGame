@@ -1,4 +1,5 @@
 #include "rook.h"
+#include <cstring>
 
 Rook::Rook(Color _color, int _x, int _y):Piece(_color, _x, _y)
 {
@@ -7,6 +8,7 @@ Rook::Rook(Color _color, int _x, int _y):Piece(_color, _x, _y)
 
 bool Rook::generatePossibilities()
 {
+    memset(possibilities,false,sizeof (possibilities));
 
 }
 

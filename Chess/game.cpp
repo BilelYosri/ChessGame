@@ -96,7 +96,10 @@ bool Game::canIPlay()
 
 Piece* Game::getSquare(int _x,int _y)
 {
-    return board[_x][_y];
+    if (_x < 0 || _x > 7 || _y < 0 || _y > 7)
+        return nullptr;
+    else
+        return board[_x][_y];
 }
 
 void Game::setSquare(Piece* _p,int _x,int _y)

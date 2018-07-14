@@ -55,21 +55,6 @@ bool King::isInCheck()
     if (!inCheck)
     {
         i=0;
-        while(!inCheck && i<8)
-        {
-            xp = x + KNIGHT_X[i];
-            yp = y + KNIGHT_Y[i];
-            p = game->getSquare(xp,yp);
-            if ((typeid(p) == typeid(Knight)) && (p->getColor()!=color))
-                inCheck=true;
-            i++;
-        }
-    }
-
-
-    if (!inCheck)
-    {
-        i=0;
         while(!inCheck && i<4)
         {
             xp = x;
@@ -82,6 +67,21 @@ bool King::isInCheck()
             }
             while(p==nullptr && !(game->isOutOfBoundaries(xp,yp)));
             if ((typeid(p) == typeid(Rook)) && (p->getColor()!=color))
+                inCheck=true;
+            i++;
+        }
+    }
+
+
+    if (!inCheck)
+    {
+        i=0;
+        while(!inCheck && i<8)
+        {
+            xp = x + KNIGHT_X[i];
+            yp = y + KNIGHT_Y[i];
+            p = game->getSquare(xp,yp);
+            if ((typeid(p) == typeid(Knight)) && (p->getColor()!=color))
                 inCheck=true;
             i++;
         }

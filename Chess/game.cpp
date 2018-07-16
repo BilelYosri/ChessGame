@@ -130,7 +130,12 @@ Piece* Game::getSquare(int _x,int _y)
 
 void Game::setSquare(Piece* _p,int _x,int _y)
 {
+    int xi = _p->getX();
+    int yi = _p->getY();
+    board[xi][yi] = nullptr;
     board[_x][_y] = _p;
+    _p->setX(_x);
+    _p->setY(_y);
 }
 
 void Game::generatePossibleMoves()
@@ -167,12 +172,12 @@ void Game::generatePossibleMoves()
     cantPlay = !possible;
 }
 
-Piece* Game::getKing()
+King* Game::getKing()
 {
     if(turn==white)
-        return whitePieces[15];
+        return (King*) whitePieces[15];
     else
-        return blackPieces[15];
+        return (King*) blackPieces[15];
 }
 
 

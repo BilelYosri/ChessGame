@@ -69,9 +69,11 @@ bool King::generatePossibilities()
                     }
                     xp = xi + KING_CASTLE_X[i];
                     yp = yi + KING_CASTLE_Y[i];
-                    possibilities[xp][yp] = canCastle;
+                    exists |= possibilities[xp][yp] = canCastle;
+
         }
     }
+    return exists;
 }
 
 void King::move(int _x, int _y)

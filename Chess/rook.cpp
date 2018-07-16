@@ -24,8 +24,8 @@ bool Rook::generatePossibilities()
         do
         {
             canMove=false;
-            xp = xp + ROOK_CASTLE_X[i];
-            yp = yp + ROOK_CASTLE_Y[i];
+            xp = xp + ROOK_X[i];
+            yp = yp + ROOK_Y[i];
             p = game->getSquare(xp,yp);
             if (p == nullptr && !(game->isOutOfBoundaries(xp,yp)))
             {

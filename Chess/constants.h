@@ -42,4 +42,7 @@ const int KING_CASTLE_Y[] = { NONE   , NONE    };
 const int ROOK_CASTLE_X[] = { 3*RIGHT, 2*LEFT  };
 const int ROOK_CASTLE_Y[] = { NONE   , NONE    };
 
+const int SIDE_ROOK_X[]   = { 4*LEFT, 3*RIGHT };
+const int SIDE_ROOK_Y[]   = { NONE   ,NONE    };
+
 #endif // CONSTANTS_H

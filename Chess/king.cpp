@@ -1,7 +1,7 @@
 #include "king.h"
 #include "game.h"
 #include "piece_types.h"
-
+#include <cstring>
 #include <typeinfo>
 
 King::King(Game* _game, Color _color, int _x, int _y):Piece(_game, _color, _x, _y)
@@ -11,7 +11,67 @@ King::King(Game* _game, Color _color, int _x, int _y):Piece(_game, _color, _x, _
 
 bool King::generatePossibilities()
 {
+    memset(possibilities,false,sizeof (possibilities));
+    int xi = x;
+    int yi = y;
+    int xr,yr;
+    int xp,yp;
+    bool exists = false;
+    bool canCastle;
+    Piece* p;
+    Rook* r;
+    for (int i=0; i<8; i++)
+    {
+        xp = xi + KING_X[i];
+        yp = yi + KING_Y[i];
 
+        if (!(game->isOutOfBoundaries(xp,yp)))
+        {
+            p = game->getSquare(xp,yp);
+            if ( p == nullptr )
+            {
+                game->setSquare(this,xp,yp);
+                if (!(isInCheck()))
+                    exists = possibilities[xp][yp] = true;
+                game->setSquare(this,xi,yi);
+            }
+            else if ( (p != nullptr) && (p->getColor() != color) )
+            {
+                game->setSquare(this,xp,yp);
+                if (!(isInCheck()))
+                    exists = possibilities[xp][yp] = true;
+                game->setSquare(this,xi,yi);
+                game->setSquare(p,xp,yp);
+            }
+        }
+    }
+    if( !moved && !isInCheck())
+    {
+        for(int i=0;i<2;i++)
+        {
+            xr = xi + SIDE_ROOK_X[i];
+            yr = yi + SIDE_ROOK_Y[i];
+            r=(Rook*) game->getSquare(xr,yr);
+            int side = (i==0)?-1:1;
+                if(!(r->isMoved()))
+                    canCastle = true;
+                    for(int j=x; j!=xr && canCastle; j+=side)
+                    {
+                        if(j!=x)
+                        {
+                            if(game->getSquare(j,y) == nullptr)
+                            {
+                                game->setSquare(this,j,y);
+                                canCastle &= !(isInCheck());
+                                game->setSquare(this,xi,yi);
+                            }
+                        }
+                    }
+                    xp = xi + KING_CASTLE_X[i];
+                    yp = yi + KING_CASTLE_Y[i];
+                    possibilities[xp][yp] = canCastle;
+        }
+    }
 }
 
 void King::move(int _x, int _y)

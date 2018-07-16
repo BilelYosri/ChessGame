@@ -15,3 +15,4 @@ void Bishop::move(int _x, int _y)
 {
 
 }
+

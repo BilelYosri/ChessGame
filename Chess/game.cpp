@@ -86,7 +86,25 @@ Game::Game(int _time, Player _p1, Player _p2)
 
 Game::~Game()
 {
+    for(int i=0;i<8;i++)
+       for(int j=0;j<8;j++)
+            if ( board[i][j] != nullptr )
+                delete[] board[i][j];
 
+    for(int i=0;i<16;i++)
+    {
+        if (whitePieces[i] != nullptr )
+            delete whitePieces[i];
+        if ( blackPieces[i] != nullptr )
+            delete blackPieces[i];
+    }
+    for(int i=0;i<15;i++)
+    {
+        if (whitePawned[i] != nullptr )
+            delete whitePawned[i];
+        if (blackPawned[i] != nullptr )
+            delete blackPawned[i];
+    }
 }
 
 bool Game::canIPlay()

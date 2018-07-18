@@ -16,6 +16,7 @@ protected:
 public:
     Piece(Game* _game, Color _color, int _x, int _y);
     virtual bool generatePossibilities()=0;
+    bool isPossible(int, int);
     virtual void move(int, int)=0;
     int getX();
     void setX(int _x);

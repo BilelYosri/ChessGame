@@ -188,7 +188,21 @@ void Game::assist(int _x,int _y)
 
 void Game::play(int _x1,int _y1,int _x2,int _y2)
 {
+    Piece* p = getSquare(_x1, _y1);
+    if (p->isPossible(_x2, _y2))
+    {
+        p->move(_x2, _y2);
+        ///TODO: (Consider Time as Thread) (Maybe even change its type from int to another class)
+        //If first Move ever:
+        //Stop time0
+        //Launch time2
 
+        //Else: Middle of the game:
+        //Stop time to current turn
+        //Launch the other time
+
+        turn = (Color) -turn;
+    }
 }
 
 void Game::capture(int _x,int _y)

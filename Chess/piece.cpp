@@ -33,3 +33,8 @@ Color Piece::getColor()
 {
     return color;
 }
+
+bool Piece::isPossible(int _x, int _y)
+{
+    return possibilities[_x][_y];
+}

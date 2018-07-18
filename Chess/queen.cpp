@@ -52,5 +52,9 @@ bool Queen::generatePossibilities()
 
 void Queen::move(int _x, int _y)
 {
-
+    Piece* p = game->getSquare(_x,_y);
+    if ( p != nullptr )
+            game->capture(_x,_y);
+    game->setSquare(nullptr,x,y);
+    game->setSquare(this,_x,_y);
 }

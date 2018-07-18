@@ -30,6 +30,11 @@ void Piece::setY(int _y)
     y=_y;
 }
 
+int Piece::getRank()
+{
+    return rank;
+}
+
 Color Piece::getColor()
 {
     return color;

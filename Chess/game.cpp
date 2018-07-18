@@ -15,6 +15,9 @@ Game::Game(int _time, Player _p1, Player _p2)
     p1 = _p1;
     p2 = _p2;
 
+    numberWhiteCaptured = 0;
+    numberBlackCaptured = 0;
+
     time0 = 300;
     turn = white;
     cantPlay = false;
@@ -195,11 +198,12 @@ void Game::play(int _x1,int _y1,int _x2,int _y2)
         ///TODO: (Consider Time as Thread) (Maybe even change its type from int to another class)
         //If first Move ever:
         //Stop time0
-        //Launch time2
-
         //Else: Middle of the game:
         //Stop time to current turn
-        //Launch the other time
+
+        generatePossibleMoves(); //This way, time of thinking will not count on players
+
+        //Launch the adversary time
 
         turn = (Color) -turn;
     }
@@ -207,7 +211,18 @@ void Game::play(int _x1,int _y1,int _x2,int _y2)
 
 void Game::capture(int _x,int _y)
 {
-
+    Piece* p = getSquare(_x,_y);
+    int r = p->getRank();
+    if (turn == white)
+    {
+        blackPieces[r] = nullptr;
+        whitePawned[numberWhiteCaptured++] = p;
+    }
+    else
+    {
+        whitePieces[r] = nullptr;
+        blackPawned[numberBlackCaptured++] = p;
+    }
 }
 
 void Game::promote(int _x, int _y)

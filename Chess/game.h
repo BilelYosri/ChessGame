@@ -15,6 +15,8 @@ class Game
     Piece* blackPieces[16];
     Piece* whitePawned[15];
     Piece* blackPawned[15];
+    int numberWhiteCaptured;
+    int numberBlackCaptured;
     Player p1,p2;
     int time0,time1,time2;
 
@@ -27,10 +29,10 @@ public:
     void setSquare(Piece* _p,int _x,int _y);
     void generatePossibleMoves();
     King* getKing();
-    void assist(int _x,int _y);
+    void assist(int _x,int _y); //Interacts with GUI
     void play(int _x1,int _y1,int _x2,int _y2);
     void capture(int _x,int _y);
-    void promote(int _x, int _y);
+    void promote(int _x, int _y); //Interacts with GUI
 };
 
 #endif // GAME_H

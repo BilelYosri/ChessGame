@@ -23,6 +23,7 @@ public:
     void setX(int _x);
     int getY();
     void setY(int _y);
+    int getRank();
     Color getColor();
 };
 

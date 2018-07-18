@@ -4,7 +4,7 @@
 #include <cstring>
 #include <typeinfo>
 
-King::King(Game* _game, Color _color, int _x, int _y):Piece(_game, _color, _x, _y)
+King::King(Game* _game, Color _color, int _x, int _y, int _rank):Piece(_game, _color, _x, _y, _rank)
 {
     moved=false;
 }

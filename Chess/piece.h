@@ -11,10 +11,11 @@ protected:
     Game* game;
     Color color;
     int x,y;
+    int rank;
     bool possibilities[8][8];
 
 public:
-    Piece(Game* _game, Color _color, int _x, int _y);
+    Piece(Game* _game, Color _color, int _x, int _y, int _rank);
     virtual bool generatePossibilities()=0;
     bool isPossible(int, int);
     virtual void move(int, int)=0;

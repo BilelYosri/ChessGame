@@ -22,61 +22,61 @@ Game::Game(int _time, Player _p1, Player _p2)
     int i;
     for (i=0; i<8; i++)
     {
-        p = new Pawn(this,white,i,1);
+        p = new Pawn(this,white,i,1,i);
         board[i][1] = p;
         whitePieces[i] = p;
-        p = new Pawn(this,black,i,6);
+        p = new Pawn(this,black,i,6,i);
         board[i][6] = p;
         blackPieces[i] = p;
     }
-    p = new Rook(this,white,0,0);
+    p = new Rook(this,white,0,0,i);
     board[0][0] = p;
     whitePieces[i++] = p;
-    p = new Rook(this,white,7,0);
+    p = new Rook(this,white,7,0,i);
     board[7][0] = p;
     whitePieces[i++] = p;
-    p = new Knight(this,white,1,0);
+    p = new Knight(this,white,1,0,i);
     board[1][0] = p;
     whitePieces[i++] = p;
-    p = new Knight(this,white,6,0);
+    p = new Knight(this,white,6,0,i);
     board[6][0] = p;
     whitePieces[i++] = p;
-    p = new Bishop(this,white,2,0);
+    p = new Bishop(this,white,2,0,i);
     board[2][0] = p;
     whitePieces[i++] = p;
-    p = new Bishop(this,white,5,0);
+    p = new Bishop(this,white,5,0,i);
     board[5][0] = p;
     whitePieces[i++] = p;
-    p = new Queen(this,white,3,0);
+    p = new Queen(this,white,3,0,i);
     board[3][0] = p;
     whitePieces[i++] = p;
-    p = new King(this,white,4,0);
+    p = new King(this,white,4,0,i);
     board[4][0] = p;
     whitePieces[i++] = p;
 
     i = 8;
-    p = new Rook(this,black,0,7);
+    p = new Rook(this,black,0,7,i);
     board[0][7] = p;
     blackPieces[i++] = p;
-    p = new Rook(this,black,7,7);
+    p = new Rook(this,black,7,7,i);
     board[7][7] = p;
     blackPieces[i++] = p;
-    p = new Knight(this,black,1,7);
+    p = new Knight(this,black,1,7,i);
     board[1][7] = p;
     blackPieces[i++] = p;
-    p = new Knight(this,black,6,7);
+    p = new Knight(this,black,6,7,i);
     board[6][7] = p;
     blackPieces[i++] = p;
-    p = new Bishop(this,black,2,7);
+    p = new Bishop(this,black,2,7,i);
     board[2][7] = p;
     blackPieces[i++] = p;
-    p = new Bishop(this,black,5,7);
+    p = new Bishop(this,black,5,7,i);
     board[5][7] = p;
     blackPieces[i++] = p;
-    p = new Queen(this,black,3,7);
+    p = new Queen(this,black,3,7,i);
     board[3][7] = p;
     blackPieces[i++] = p;
-    p = new King(this,black,4,7);
+    p = new King(this,black,4,7,i);
     board[4][7] = p;
     blackPieces[i++] = p;
 
@@ -206,6 +206,11 @@ void Game::play(int _x1,int _y1,int _x2,int _y2)
 }
 
 void Game::capture(int _x,int _y)
+{
+
+}
+
+void Game::promote(int _x, int _y)
 {
 
 }

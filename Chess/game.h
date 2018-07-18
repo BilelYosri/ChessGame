@@ -30,6 +30,7 @@ public:
     void assist(int _x,int _y);
     void play(int _x1,int _y1,int _x2,int _y2);
     void capture(int _x,int _y);
+    void promote(int _x, int _y);
 };
 
 #endif // GAME_H

@@ -1,12 +1,13 @@
 #include "piece.h"
 #include "game.h"
 
-Piece::Piece(Game* _game, Color _color, int _x, int _y)
+Piece::Piece(Game* _game, Color _color, int _x, int _y, int _rank)
 {
     game = _game;
     color=_color;
     x=_x;
     y=_y;
+    rank = _rank;
 }
 
 int Piece::getX()

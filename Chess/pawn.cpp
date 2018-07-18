@@ -3,7 +3,7 @@
 #include <cstring>
 #include <typeinfo>
 
-Pawn::Pawn(Game* _game, Color _color, int _x, int _y):Piece(_game, _color, _x, _y)
+Pawn::Pawn(Game* _game, Color _color, int _x, int _y, int _rank):Piece(_game, _color, _x, _y, _rank)
 {
     moved=false;
     enPassant=false;
@@ -94,7 +94,28 @@ bool Pawn::generatePossibilities()
 
 void Pawn::move(int _x, int _y)
 {
+    int canPromote = (color == white)? 7: 0;
+    bool capture = (x != _x);
 
+    Piece* p = game->getSquare(_x,_y);
+    if (capture)
+    {
+        if ( p != nullptr )
+            game->capture(_x,_y);
+        else
+            game->capture(_x,y);
+    }
+    game->setSquare(nullptr,x,y);
+    game->setSquare(this,_x,_y);
+
+
+    if (abs(y - _y) > 1)
+        setEnPassant(true);
+
+    if (_y == canPromote)
+    {
+        game->promote(_x,_y);
+    }
 }
 
 bool Pawn::isMoved()

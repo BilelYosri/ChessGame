@@ -10,7 +10,7 @@ class Pawn : public Piece
     bool moved;
     bool enPassant;
 public:
-    Pawn(Game* _game, Color _color, int _x, int _y);
+    Pawn(Game* _game, Color _color, int _x, int _y, int _rank);
     bool generatePossibilities();
     void move(int _x, int _y);
     bool isMoved();

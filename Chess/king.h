@@ -10,7 +10,7 @@ class King : public Piece
 private:
     bool moved;
 public:
-    King(Game* _game, Color _color, int _x, int _y);
+    King(Game* _game, Color _color, int _x, int _y, int _rank);
     bool generatePossibilities();
     void move(int _x, int _y);
     bool isMoved();

@@ -78,6 +78,28 @@ bool King::generatePossibilities()
 
 void King::move(int _x, int _y)
 {
+    int d = abs(x - _x);
+    int line;
+    Piece* p = game->getSquare(_x,_y);
+    if ( p != nullptr )
+            game->capture(_x,_y);
+    game->setSquare(nullptr,x,y);
+    game->setSquare(this,_x,_y);
+    setMoved();
+    if ( d > 1 )
+    {
+        line = (color == white)?0:7;
+        if ( _x == 6 )
+        {
+             p = game->getSquare(7,line);
+             p->move(5,line);
+        }
+        else
+        {
+            p = game->getSquare(0,line);
+            p->move(3,line);
+        }
+    }
 
 }
 

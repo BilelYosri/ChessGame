@@ -1,0 +1,1 @@
+Those are the model classes used to control the logical aspects of the game and pieces

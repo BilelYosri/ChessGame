@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1366</width>
+    <height>768</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label_background">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1366</width>
+      <height>768</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../res.qrc">:/img/res/background.jpg</pixmap>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_exit">
+    <property name="geometry">
+     <rect>
+      <x>1308</x>
+      <y>14</y>
+      <width>42</width>
+      <height>42</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_surrender">
+    <property name="geometry">
+     <rect>
+      <x>1248</x>
+      <y>14</y>
+      <width>42</width>
+      <height>42</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_new_game">
+    <property name="geometry">
+     <rect>
+      <x>22</x>
+      <y>353</y>
+      <width>239</width>
+      <height>67</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_load_game">
+    <property name="geometry">
+     <rect>
+      <x>22</x>
+      <y>433</y>
+      <width>239</width>
+      <height>67</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_save_game">
+    <property name="geometry">
+     <rect>
+      <x>22</x>
+      <y>513</y>
+      <width>239</width>
+      <height>67</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_about">
+    <property name="geometry">
+     <rect>
+      <x>22</x>
+      <y>593</y>
+      <width>239</width>
+      <height>67</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_first_move">
+    <property name="geometry">
+     <rect>
+      <x>1064</x>
+      <y>643</y>
+      <width>39</width>
+      <height>39</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_previous_move">
+    <property name="geometry">
+     <rect>
+      <x>1115</x>
+      <y>643</y>
+      <width>39</width>
+      <height>39</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_next_move">
+    <property name="geometry">
+     <rect>
+      <x>1165</x>
+      <y>643</y>
+      <width>39</width>
+      <height>39</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_last_move">
+    <property name="geometry">
+     <rect>
+      <x>1215</x>
+      <y>643</y>
+      <width>39</width>
+      <height>39</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="board">
+    <property name="geometry">
+     <rect>
+      <x>294</x>
+      <y>64</y>
+      <width>638</width>
+      <height>638</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="blackCapturedScene">
+    <property name="geometry">
+     <rect>
+      <x>294</x>
+      <y>6</y>
+      <width>638</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 0px</string>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="whiteCapturedScene">
+    <property name="geometry">
+     <rect>
+      <x>294</x>
+      <y>721</y>
+      <width>638</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 0px</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../res.qrc"/>
+ </resources>
+ <connections/>
+</ui>

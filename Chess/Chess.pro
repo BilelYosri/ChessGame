@@ -24,35 +24,48 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp \
-    piece.cpp \
-    pawn.cpp \
-    rook.cpp \
-    knight.cpp \
-    bishop.cpp \
-    queen.cpp \
-    king.cpp \
-    game.cpp \
-    player.cpp
+    viewClasses/gpiece.cpp \
+    viewClasses/gsquare.cpp \
+    viewClasses/gdialogexit.cpp \
+    modelClasses/mbishop.cpp \
+    modelClasses/mgame.cpp \
+    modelClasses/mking.cpp \
+    modelClasses/mknight.cpp \
+    modelClasses/mpawn.cpp \
+    modelClasses/mpiece.cpp \
+    modelClasses/mqueen.cpp \
+    modelClasses/mrook.cpp \
+    modelClasses/mplayer.cpp \
+    viewClasses/ggame.cpp \
+    viewClasses/gwindow.cpp
 
 HEADERS += \
-        mainwindow.h \
-    piece.h \
-    pawn.h \
-    rook.h \
-    knight.h \
-    bishop.h \
-    queen.h \
-    king.h \
-    game.h \
-    player.h \
-    constants.h \
-    piece_types.h
+    viewClasses/gpiece.h \
+    viewClasses/gsquare.h \
+    viewClasses/gdialogexit.h \
+    modelClasses/mbishop.h \
+    modelClasses/mconstants.h \
+    modelClasses/mgame.h \
+    modelClasses/mking.h \
+    modelClasses/mknight.h \
+    modelClasses/mpawn.h \
+    modelClasses/mpiece.h \
+    modelClasses/mpiece_types.h \
+    modelClasses/mplayer.h \
+    modelClasses/mqueen.h \
+    modelClasses/mrook.h \
+    viewClasses/ggame.h \
+    viewClasses/gwindow.h \
+    viewClasses/gconstants.h
 
 FORMS += \
-        mainwindow.ui
+    viewClasses/ggame.ui \
+    viewClasses/dialogexit.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    res.qrc

@@ -15,5 +15,8 @@
         <file>res/white_knight.png</file>
         <file>res/white_queen.png</file>
         <file>res/white_rook.png</file>
+        <file>res/mate_black.png</file>
+        <file>res/mate_white.png</file>
+        <file>res/draw.png</file>
     </qresource>
 </RCC>

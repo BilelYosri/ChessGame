@@ -35,6 +35,8 @@ public:
     bool play(int _x1,int _y1,int _x2,int _y2);
     void capture(int _x,int _y);
     void promote(int _x, int _y); //Interacts with GUI
+    bool isMate();
+    bool isStalemate();
 
     MPiece* getWhitePiece(int _x);
     MPiece* getBlackPiece(int _x);
@@ -42,6 +44,7 @@ public:
     MPiece* getBlackCaptured(int _x);
     int getNumberWhiteCaptured();
     int getNumberBlackCaptured();
+
 };
 
 #endif // GAME_H

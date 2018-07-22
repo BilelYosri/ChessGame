@@ -52,7 +52,9 @@ bool MKing::generatePossibilities()
             xr = xi + SIDE_ROOK_X[i];
             yr = yi + SIDE_ROOK_Y[i];
             r=(MRook*) game->getSquare(xr,yr);
-            int side = (i==0)?-1:1;
+            if (r != nullptr)
+            {
+                int side = (i==0)?-1:1;
                 if(!(r->isMoved()))
                     canCastle = true;
                     for(int j=x; j!=xr && canCastle; j+=side)
@@ -74,7 +76,7 @@ bool MKing::generatePossibilities()
                     xp = xi + KING_CASTLE_X[i];
                     yp = yi + KING_CASTLE_Y[i];
                     exists |= possibilities[xp][yp] = canCastle;
-
+            }
         }
     }
     return exists;

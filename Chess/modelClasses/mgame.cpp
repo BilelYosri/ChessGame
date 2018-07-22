@@ -264,6 +264,16 @@ void MGame::promote(int _x, int _y)
 
 }
 
+bool MGame::isMate()
+{
+    return (cantPlay && getKing()->isInCheck());
+}
+
+bool MGame::isStalemate()
+{
+    return (cantPlay && !getKing()->isInCheck());
+}
+
 MPiece *MGame::getWhitePiece(int _x)
 {
     return whitePieces[_x];

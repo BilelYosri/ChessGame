@@ -37,7 +37,9 @@ SOURCES += \
     modelClasses/mrook.cpp \
     modelClasses/mplayer.cpp \
     viewClasses/ggame.cpp \
-    viewClasses/gwindow.cpp
+    viewClasses/gwindow.cpp \
+    dialog_mate.cpp \
+    dialog_draw.cpp
 
 HEADERS += \
     viewClasses/gpiece.h \
@@ -56,11 +58,15 @@ HEADERS += \
     modelClasses/mrook.h \
     viewClasses/ggame.h \
     viewClasses/gwindow.h \
-    viewClasses/gconstants.h
+    viewClasses/gconstants.h \
+    dialog_mate.h \
+    dialog_draw.h
 
 FORMS += \
     viewClasses/ggame.ui \
-    viewClasses/dialogexit.ui
+    viewClasses/dialogexit.ui \
+    dialog_mate.ui \
+    dialogdraw.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

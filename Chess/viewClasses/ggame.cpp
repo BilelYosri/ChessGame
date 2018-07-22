@@ -1,5 +1,7 @@
 #include "ggame.h"
 #include "gconstants.h"
+#include "dialog_mate.h"
+#include "dialog_draw.h"
 
 GGame::GGame(QGraphicsScene* _scene,  QGraphicsScene* _whiteCapturedScene,  QGraphicsScene* _blackCapturedScene)
 {
@@ -147,6 +149,21 @@ bool GGame::play(int _x1, int _y1, int _x2, int _y2)
     {
         resetAllSquares();
         updatePieces();
+        if (mGame->isMate())
+        {
+            DialogMate dialog;
+            dialog.setModal(true);
+            dialog.setWindowFlags(Qt::FramelessWindowHint);
+            dialog.setBackground((Color) -(mGame->getTurn()));
+            dialog.exec();
+        }
+        else if (mGame->isStalemate())
+        {
+            DialogDraw dialog;
+            dialog.setModal(true);
+            dialog.setWindowFlags(Qt::FramelessWindowHint);
+            dialog.exec();
+        }
         return true;
     }
     else

@@ -49,8 +49,11 @@ bool MPawn::generatePossibilities()
     {
         xp = xi + PAWN_JUMP_X[0];
         yp = yi + color * PAWN_JUMP_Y[0];
+        int xpp = xi + PAWN_ADVANCE_X[0];
+        int ypp = yi + color * PAWN_ADVANCE_Y[0];
+        MPiece* pp = game->getSquare(xpp,ypp);
         p = game->getSquare(xp,yp);
-        if ( p == nullptr )
+        if ( ( p == nullptr ) && ( pp == nullptr ) )
         {
             game->setSquare(this,xp,yp);
             if (!(k->isInCheck()))

@@ -1,7 +1,6 @@
 <RCC>
     <qresource prefix="/img">
         <file>res/exit_dialog.jpg</file>
-        <file>res/background.jpg</file>
         <file>res/empty.png</file>
         <file>res/white_pawn.png</file>
         <file>res/black_pawn.png</file>
@@ -18,5 +17,17 @@
         <file>res/mate_black.png</file>
         <file>res/mate_white.png</file>
         <file>res/draw.png</file>
+        <file>res/time_black.png</file>
+        <file>res/time_white.png</file>
+        <file>res/promote_black.png</file>
+        <file>res/promote_white.png</file>
+        <file>res/background.png</file>
+        <file>res/icon.ico</file>
+        <file>res/new_game_dialog.png</file>
+        <file>res/about.png</file>
+    </qresource>
+    <qresource prefix="/fonts">
+        <file>res/bahnschrift.ttf</file>
+        <file>res/digital_counter_7.ttf</file>
     </qresource>
 </RCC>

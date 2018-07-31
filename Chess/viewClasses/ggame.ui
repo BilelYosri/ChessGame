@@ -27,26 +27,13 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="../res.qrc">:/img/res/background.jpg</pixmap>
+     <pixmap resource="../res.qrc">:/img/res/background.png</pixmap>
     </property>
    </widget>
    <widget class="QPushButton" name="btn_exit">
     <property name="geometry">
      <rect>
       <x>1308</x>
-      <y>14</y>
-      <width>42</width>
-      <height>42</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_surrender">
-    <property name="geometry">
-     <rect>
-      <x>1248</x>
       <y>14</y>
       <width>42</width>
       <height>42</height>
@@ -111,10 +98,10 @@
    <widget class="QPushButton" name="btn_first_move">
     <property name="geometry">
      <rect>
-      <x>1064</x>
-      <y>643</y>
-      <width>39</width>
-      <height>39</height>
+      <x>1073</x>
+      <y>641</y>
+      <width>41</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
@@ -124,10 +111,10 @@
    <widget class="QPushButton" name="btn_previous_move">
     <property name="geometry">
      <rect>
-      <x>1115</x>
-      <y>643</y>
-      <width>39</width>
-      <height>39</height>
+      <x>1117</x>
+      <y>641</y>
+      <width>41</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
@@ -137,10 +124,10 @@
    <widget class="QPushButton" name="btn_next_move">
     <property name="geometry">
      <rect>
-      <x>1165</x>
-      <y>643</y>
-      <width>39</width>
-      <height>39</height>
+      <x>1161</x>
+      <y>641</y>
+      <width>41</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
@@ -150,10 +137,10 @@
    <widget class="QPushButton" name="btn_last_move">
     <property name="geometry">
      <rect>
-      <x>1215</x>
-      <y>643</y>
-      <width>39</width>
-      <height>39</height>
+      <x>1204</x>
+      <y>641</y>
+      <width>41</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
@@ -163,17 +150,20 @@
    <widget class="QGraphicsView" name="board">
     <property name="geometry">
      <rect>
-      <x>294</x>
+      <x>328</x>
       <y>64</y>
       <width>638</width>
       <height>638</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/img/res/empty.png)</string>
+    </property>
    </widget>
    <widget class="QGraphicsView" name="blackCapturedScene">
     <property name="geometry">
      <rect>
-      <x>294</x>
+      <x>328</x>
       <y>6</y>
       <width>638</width>
       <height>41</height>
@@ -186,7 +176,7 @@
    <widget class="QGraphicsView" name="whiteCapturedScene">
     <property name="geometry">
      <rect>
-      <x>294</x>
+      <x>328</x>
       <y>721</y>
       <width>638</width>
       <height>41</height>
@@ -194,6 +184,82 @@
     </property>
     <property name="styleSheet">
      <string notr="true">border: 0px</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="time_white">
+    <property name="geometry">
+     <rect>
+      <x>1039</x>
+      <y>90</y>
+      <width>241</width>
+      <height>77</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Digital Counter 7</family>
+      <pointsize>48</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color : #efefef</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="lineWidth">
+     <number>4</number>
+    </property>
+    <property name="text">
+     <string>00:00</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="time_black">
+    <property name="geometry">
+     <rect>
+      <x>1039</x>
+      <y>190</y>
+      <width>241</width>
+      <height>78</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Digital Counter 7</family>
+      <pointsize>48</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #7f7f7f
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="lineWidth">
+     <number>4</number>
+    </property>
+    <property name="text">
+     <string>00:00</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="notationScene">
+    <property name="geometry">
+     <rect>
+      <x>1040</x>
+      <y>331</y>
+      <width>239</width>
+      <height>304</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
     </property>
    </widget>
   </widget>

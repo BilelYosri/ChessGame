@@ -1,6 +1,8 @@
 #ifndef DIALOGEXIT_H
 #define DIALOGEXIT_H
 
+//Dialog displayed when clicked on "X" button (in the top right corner)
+
 #include <QDialog>
 #include "viewClasses/gwindow.h"
 
@@ -20,6 +22,8 @@ private slots:
     void on_btn_cancel_pressed();
 
     void on_btn_just_exit_pressed();
+
+    void on_btn_save_exit_pressed();
 
 private:
     Ui::DialogExit *ui;

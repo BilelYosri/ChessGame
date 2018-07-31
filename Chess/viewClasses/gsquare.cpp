@@ -9,6 +9,7 @@ Square::Square(GGame* _gGame, bool _dark, int _x, int _y)
     resetColor();
     x = _x;
     y = _y;
+    setFlag(ItemIsMovable, true);
 }
 
 QRectF Square::boundingRect() const
@@ -25,12 +26,38 @@ void Square::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QW
     painter->fillRect(rec,brush);
     painter->drawRect(rec);
     QString s = QString("%1,%2").arg(char(x+'A')).arg(y+1);
-    //painter->drawText(rec,s);
 }
 
-void Square::mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event)
+void Square::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
-    gGame->highlightMoves(x, y);
+    GPiece* p = gGame->getPiece(x,y);
+    if (p != nullptr)
+    {
+        p->mouseMoveEvent(event);
+    }
+
+}
+
+void Square::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
+{
+    GPiece* p = gGame->getPiece(x,y);
+    if (p != nullptr)
+    {
+        p->mouseReleaseEvent(event);
+    }
+}
+
+void Square::mousePressEvent(QGraphicsSceneMouseEvent *event)
+{
+    GPiece* p = gGame->getPiece(x,y);
+    if (p != nullptr)
+    {
+        p->mousePressEvent(event);
+    }
+    else
+    {
+        gGame->tryMove(event);
+    }
 }
 
 void Square::highlight(QColor _color)

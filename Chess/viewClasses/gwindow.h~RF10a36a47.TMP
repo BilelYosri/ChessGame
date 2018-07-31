@@ -38,7 +38,6 @@ public:
     int getMinScroll();
     //determine if a game is set to prevent saving a null game
     bool gameInProgress();
-    //destructor
     ~GWindow();
 
 public slots:

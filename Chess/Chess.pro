@@ -35,11 +35,18 @@ SOURCES += \
     modelClasses/mpiece.cpp \
     modelClasses/mqueen.cpp \
     modelClasses/mrook.cpp \
-    modelClasses/mplayer.cpp \
     viewClasses/ggame.cpp \
     viewClasses/gwindow.cpp \
-    dialog_mate.cpp \
-    dialog_draw.cpp
+    viewClasses/dialog_mate.cpp \
+    viewClasses/dialog_draw.cpp \
+    modelClasses/mcountdown.cpp \
+    modelClasses/mtimer.cpp \
+    viewClasses/dialog_time.cpp \
+    viewClasses/dialog_promote.cpp \
+    viewClasses/gnotation.cpp \
+    modelClasses/mstate.cpp \
+    viewClasses/dialog_new_game.cpp \
+    viewClasses/dialog_about.cpp
 
 HEADERS += \
     viewClasses/gpiece.h \
@@ -53,20 +60,31 @@ HEADERS += \
     modelClasses/mpawn.h \
     modelClasses/mpiece.h \
     modelClasses/mpiece_types.h \
-    modelClasses/mplayer.h \
     modelClasses/mqueen.h \
     modelClasses/mrook.h \
     viewClasses/ggame.h \
     viewClasses/gwindow.h \
     viewClasses/gconstants.h \
-    dialog_mate.h \
-    dialog_draw.h
+    viewClasses/dialog_mate.h \
+    viewClasses/dialog_draw.h \
+    modelClasses/mcountdown.h \
+    modelClasses/mtimer.h \
+    viewClasses/dialog_time.h \
+    viewClasses/dialog_promote.h \
+    viewClasses/gnotation.h \
+    modelClasses/mstate.h \
+    viewClasses/dialog_new_game.h \
+    viewClasses/dialog_about.h
 
 FORMS += \
     viewClasses/ggame.ui \
     viewClasses/dialogexit.ui \
-    dialog_mate.ui \
-    dialogdraw.ui
+    viewClasses/dialog_mate.ui \
+    viewClasses/dialogdraw.ui \
+    viewClasses/dialogtime.ui \
+    viewClasses/dialogpromote.ui \
+    viewClasses/dialognewgame.ui \
+    viewClasses/dialogabout.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -75,3 +93,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     res.qrc
+
+RC_FILE = chess.rc

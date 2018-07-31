@@ -27,7 +27,7 @@ bool MRook::generatePossibilities()
             xp = xp + ROOK_X[i];
             yp = yp + ROOK_Y[i];
             p = game->getSquare(xp,yp);
-            if (p == nullptr && !(game->isOutOfBoundaries(xp,yp)))
+            if ((p == nullptr) && (!(game->isOutOfBoundaries(xp,yp))))
             {
                 canMove=true;
                 game->setSquare(this,xp,yp);
@@ -37,7 +37,7 @@ bool MRook::generatePossibilities()
             }
         }
         while( canMove );
-        if ( (p != nullptr) && (p->getColor()!=color) )
+        if ( (p != nullptr) && (p->getColor() != color) )
         {
             game->setSquare(this,xp,yp);
             if (!(k->isInCheck()))

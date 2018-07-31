@@ -98,7 +98,6 @@ bool MPawn::generatePossibilities()
 void MPawn::move(int _x, int _y)
 {
     moved = true;
-    int canPromote = (color == white)? 7: 0;
     bool capture = (x != _x);
     int oldY = y;
 
@@ -108,19 +107,15 @@ void MPawn::move(int _x, int _y)
         if ( p != nullptr )
             game->capture(_x,_y);
         else
+        {
             game->capture(_x, y);
+            game->setSquare(nullptr,_x,y);
+        }
     }
-
     game->setSquare(this,_x,_y);
 
     if (abs(_y - oldY) > 1)
         setEnPassant(true);
-
-    if (_y == canPromote)
-    {
-        game->promote(_x,_y);
-    }
-
 }
 
 bool MPawn::isMoved()

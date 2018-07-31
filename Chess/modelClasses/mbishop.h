@@ -8,8 +8,11 @@
 class MBishop : public MPiece
 {
 public:
+    //Constructor
     MBishop(MGame* _game, Color _color, int _x, int _y, int _rank);
+    //Inherited + Polymorphism
     bool generatePossibilities();
+    //Inherited + Polymorphism
     void move(int _x, int _y);
 };
 

@@ -17,7 +17,7 @@ bool MKing::generatePossibilities()
     int xr,yr;
     int xp,yp;
     bool exists = false;
-    bool canCastle;
+    canCastle = false;
     MPiece* p;
     MRook* r;
     for (int i=0; i<8; i++)
@@ -51,13 +51,15 @@ bool MKing::generatePossibilities()
         {
             xr = xi + SIDE_ROOK_X[i];
             yr = yi + SIDE_ROOK_Y[i];
+
             r=(MRook*) game->getSquare(xr,yr);
             if (r != nullptr)
             {
                 int side = (i==0)?-1:1;
                 if(!(r->isMoved()))
+                {
                     canCastle = true;
-                    for(int j=x; j!=xr && canCastle; j+=side)
+                    for(int j=x; (j!=xr) && (canCastle); j+=side)
                     {
                         if(j!=x)
                         {
@@ -75,7 +77,9 @@ bool MKing::generatePossibilities()
                     }
                     xp = xi + KING_CASTLE_X[i];
                     yp = yi + KING_CASTLE_Y[i];
-                    exists |= possibilities[xp][yp] = canCastle;
+                    possibilities[xp][yp] = canCastle;
+                    exists |= possibilities[xp][yp];
+                }
             }
         }
     }
@@ -154,7 +158,7 @@ bool MKing::isInCheck()
                 yp = yp + ROOK_Y[i];
                 p = game->getSquare(xp,yp);
             }
-            while(p==nullptr && !(game->isOutOfBoundaries(xp,yp)));
+            while( (p==nullptr) && !(game->isOutOfBoundaries(xp,yp)));
             if ((p != nullptr) && (p->getName() == "rook") && (p->getColor()!=color))
                 inCheck=true;
             i++;
@@ -190,7 +194,7 @@ bool MKing::isInCheck()
                 yp = yp + BISHOP_Y[i];
                 p = game->getSquare(xp,yp);
             }
-            while(p==nullptr && !(game->isOutOfBoundaries(xp,yp)));
+            while( (p==nullptr) && !(game->isOutOfBoundaries(xp,yp)));
             if ((p != nullptr) && (p->getName() == "bishop") && (p->getColor()!=color))
                 inCheck=true;
             i++;
@@ -211,7 +215,7 @@ bool MKing::isInCheck()
                 yp = yp + QUEEN_Y[i];
                 p = game->getSquare(xp,yp);
             }
-            while(p==nullptr && !(game->isOutOfBoundaries(xp,yp)));
+            while( (p==nullptr) && !(game->isOutOfBoundaries(xp,yp)));
             if ((p != nullptr) && (p->getName() == "queen") && (p->getColor()!=color))
                 inCheck=true;
             i++;
@@ -235,4 +239,9 @@ bool MKing::isInCheck()
     }
 
     return inCheck;
+}
+
+bool MKing::canICastle()
+{
+    return canCastle;
 }

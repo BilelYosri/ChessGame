@@ -1,6 +1,8 @@
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 
+//This header specifies the constants, enum classes, and movement behaviours of the pieces
+
 enum Color { white = 1, black = -1};
 
 const int UP    = 1 ;
